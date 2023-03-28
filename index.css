@@ -12,6 +12,7 @@ body {
     background-image: url(/img/table.png);
     background-position: center;
     background-size: cover;
+    height: 100vh;
     max-height: 100%;
     max-width: 700px;
     margin: 0 auto;
@@ -30,6 +31,8 @@ h1 {
     margin: 2rem auto 0 auto;
     display: flex;
     gap: 2rem;
+    height: 70%;
+    max-height: 100%;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
