@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    background-image: url(/img/table.png);
+    background-position: center;
+    background-size: cover;
+    max-height: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 2rem 0 0 0;
+    color: #F0C419;
+    text-shadow: 0px 0px 6px #5B0534;
+}
+
+.game-container {
+    max-width: 700px;
+    margin: 2rem auto 0 auto;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.new-cards-button {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    background-color: #5B0534;
+    background-image: url(/img/poker-chip.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 2px solid #000;
+    transition-duration: 0.3s;
+}
+
+.new-cards-button:hover {
+    cursor: pointer;
+    filter: drop-shadow(4px 4px 0 #F0C419);
+    transform: translateY(-3px);
+    transition: transform 0.3s ease, filter 0.3s;
+}
+
+.new-cards-button:active {
+    border-color: #F0C419;
+}
+
+.card-images {
+    display: flex;
+    justify-content: center;
+    gap: 8%;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.card-img {
+    display: inline-block;
+    max-width: 100%;
+    overflow: auto;
+    flex: 1;
+}

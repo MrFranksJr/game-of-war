@@ -1,0 +1,7 @@
+node_modules
+.vscode
+vite.config.js
+package.json
+package-lock.json
+images/.DS_Store
+*.code-workspace
