@@ -3,6 +3,7 @@ const baseUrl = 'https://deckofcardsapi.com/api/deck'
 const deckCount = 'deck_count=1'
 
 function getDeck() {
+    document.getElementById('card-images').innerHTML = `<img src="/img/placeholder.png"></img>`
     fetch(baseUrl+"/new/shuffle/?"+deckCount)
         .then(res => res.json())
         .then(data => {
@@ -12,6 +13,7 @@ function getDeck() {
 
 function drawCards() {
     if (deckId) {
+        document.getElementById('card-images').innerHTML = `<img src='/img/loading.svg' class='card-img'><img src='/img/loading.svg' class='card-img'>`
         fetch(`${baseUrl}/${deckId}/draw/?count=2`)
             .then(res => res.json())
             .then(data => {
