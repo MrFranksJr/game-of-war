@@ -103,6 +103,7 @@ h1 {
     hyphens: auto;
     overflow: auto;
     font-size: 1.5rem;
+    width: 100%;
 }
 
 .vs {

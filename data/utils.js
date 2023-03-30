@@ -12,30 +12,17 @@ function reloadDefaultCards() {
 }
 
 function calcWinner(drawnCards) {
-    const cardValues = {
-        'A': 14,
-        'K': 13,
-        'Q': 12,
-        'J': 11,
-        '0': 10,
-        '9': 9,
-        '8': 8,
-        '7': 7,
-        '6': 6,
-        '5': 5,
-        '4': 4,
-        '3': 3,
-        '2': 2
-      }
+    const valueOptions = ["2", "3", "4", "5", "6", "7", "8", "9", 
+    "10", "JACK", "QUEEN", "KING", "ACE"]
+    
+    const card1ValueIndex = valueOptions.indexOf(drawnCards[0].value)
+    const card2ValueIndex = valueOptions.indexOf(drawnCards[1].value)
 
-      const card1Score = cardValues[drawnCards[0].code.slice(0, -1)]
-      const card2Score = cardValues[drawnCards[1].code.slice(0, -1)]
-
-      if (card1Score > card2Score) {
-        return 'Computer wins!! Score: ' + card1Score
-      } else if (card2Score > card1Score) {
-        return 'You win!! Score: ' + card2Score
-      } else {
-        return 'Tie!! Score: ' + card1Score
-      }
+    if (card1ValueIndex > card2ValueIndex) {
+    return 'Computer wins!! Score: ' + drawnCards[0].value
+    } else if (card2ValueIndex > card1ValueIndex) {
+    return 'You win!! Score: ' + drawnCards[1].value
+    } else {
+    return 'Tie!! Score: ' + drawnCards[0].value
+    }
 }
