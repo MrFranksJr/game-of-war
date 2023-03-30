@@ -18,6 +18,18 @@ body {
     margin: 0 auto;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.remaining-cards {
+    color: #F0C419;
+    text-shadow: 2px 2px 0px #5B0534;
+    font-size: 1.3rem;
+}
+
 h1 {
     text-align: center;
     font-size: 3rem;
@@ -67,16 +79,34 @@ h1 {
 
 .card-images {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     gap: 8%;
     width: 100%;
     padding: 0 1rem;
 }
 
-.card-img {
-    display: inline-block;
+.card-slot {
+    border: 1px solid #5B0534;
+    border-radius: 5px;
     max-width: 100%;
-    overflow: auto;
-    flex: 1;
+    height: 100%;
 }
 
+.card-img {
+    width: 100%;
+    overflow: auto;
+}
+
+.card-owner {
+    hyphens: auto;
+    overflow: auto;
+    font-size: 1.5rem;
+}
+
+.vs {
+    display: inline-block;
+    margin-top: 3rem;
+    min-width: 50px;
+    max-width: 100%;
+}
