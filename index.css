@@ -9,10 +9,11 @@ html, body {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background-image: url(/img/table.png);
     background-position: center;
     background-size: cover;
-    height: 100vh;
     max-height: 100%;
     max-width: 700px;
     margin: 0 auto;

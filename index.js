@@ -26,9 +26,11 @@ function drawCards() {
 
                     if (i === 0) {
                         i++
+                        document.getElementById('card-1').src = "/img/card-back.png"
                         preLoadImage(card.image, 'card-1') 
                     } 
                     else if (i === 1) {
+                        document.getElementById('card-2').src = "/img/card-back.png"
                         preLoadImage(card.image, 'card-2')
                     }
                 }
