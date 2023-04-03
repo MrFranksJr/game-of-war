@@ -1,4 +1,4 @@
-import { preLoadImage, reloadDefaultCards, calcWinner, allCardTypes } from "./data/utils.js"
+import { preLoadImage, reloadDefaultCards, calcWinner, allCardTypes, computerScore, playerScore } from "./data/utils.js"
 
 let deckId
 const baseUrl = 'https://deckofcardsapi.com/api/deck'
@@ -40,10 +40,16 @@ function drawCards() {
                     document.getElementById('card-2').src = preLoadImage(card.image).src
                 }
             }
-            document.getElementById('battle-outcome').innerText = calcWinner(data.cards)
+            document.getElementById('battle-outcome').textContent = calcWinner(data.cards)
+            document.getElementById('computer-score').textContent = computerScore
+            document.getElementById('player-score').textContent = playerScore
         })
         .then(() => {
-            document.getElementById("new-cards").disabled = false
+            if (remainingCardsEl.innerHTML === '0 Cards Remaining in Deck') {
+                document.getElementById("new-cards").disabled = true
+            } else {
+                document.getElementById("new-cards").disabled = false
+            }
         })
 }
 

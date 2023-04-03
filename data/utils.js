@@ -1,4 +1,4 @@
-export { preLoadImage, reloadDefaultCards, calcWinner, allCardTypes }
+export { preLoadImage, reloadDefaultCards, calcWinner, allCardTypes, computerScore, playerScore }
 
 const allCardTypes = [
     'AS', 'AD', 'AC', 'AH',
@@ -15,6 +15,8 @@ const allCardTypes = [
     'QS', 'QD', 'QC', 'QH',
     'KS', 'KD', 'KC', 'KH',
 ]
+let computerScore = 0
+let playerScore = 0
 
 function preLoadImage(imagePath) {
     const drawnCard = new Image()
@@ -33,23 +35,14 @@ function calcWinner(drawnCards) {
     
     const card1ValueIndex = valueOptions.indexOf(drawnCards[0].value)
     const card2ValueIndex = valueOptions.indexOf(drawnCards[1].value)
-    let computerArray = {
-        message: 'Computer wins!! Score: ' + drawnCards[0].value,
-        score: drawnCards[0].value,
-    }
-    let playerArray = {
-        message: 'You win!! Score: ' + drawnCards[1].value,
-        score: drawnCards[1].value,
-    }
-
-    document.getElementById('computer-score').innerText = Number(document.getElementById('computer-score').innerText) + Number(computerArray.score)
-    document.getElementById('player-score').innerText = Number(document.getElementById('player-score').innerText) + Number(playerArray.score)
 
     if (card1ValueIndex > card2ValueIndex) {
-        return computerArray.message
+        computerScore++
+        return 'Computer wins this round!!'
     } else if (card2ValueIndex > card1ValueIndex) {
-        return playerArray.message
+        playerScore ++
+        return 'You win this round!!'
     } else {
-        return 'WAR!' + drawnCards[0].value
+        return 'WAR!'
     }
 }
