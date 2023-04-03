@@ -33,12 +33,23 @@ function calcWinner(drawnCards) {
     
     const card1ValueIndex = valueOptions.indexOf(drawnCards[0].value)
     const card2ValueIndex = valueOptions.indexOf(drawnCards[1].value)
+    let computerArray = {
+        message: 'Computer wins!! Score: ' + drawnCards[0].value,
+        score: drawnCards[0].value,
+    }
+    let playerArray = {
+        message: 'You win!! Score: ' + drawnCards[1].value,
+        score: drawnCards[1].value,
+    }
+
+    document.getElementById('computer-score').innerText = Number(document.getElementById('computer-score').innerText) + Number(computerArray.score)
+    document.getElementById('player-score').innerText = Number(document.getElementById('player-score').innerText) + Number(playerArray.score)
 
     if (card1ValueIndex > card2ValueIndex) {
-    return 'Computer wins!! Score: ' + drawnCards[0].value
+        return computerArray.message
     } else if (card2ValueIndex > card1ValueIndex) {
-    return 'You win!! Score: ' + drawnCards[1].value
+        return playerArray.message
     } else {
-    return 'Tie!! Score: ' + drawnCards[0].value
+        return 'WAR!' + drawnCards[0].value
     }
 }

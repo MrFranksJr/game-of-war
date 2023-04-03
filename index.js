@@ -13,6 +13,7 @@ function getDeck() {
             remainingCardsEl.innerHTML = `${data.remaining} Cards Remaining in Deck`
             reloadDefaultCards()
             deckId = data.deck_id
+            document.getElementById("new-cards").disabled = false
         })
     for (let card of allCardTypes) {
         let result = preLoadImage(`https://deckofcardsapi.com/static/img/${card}.png`)
@@ -21,30 +22,25 @@ function getDeck() {
 }
 
 function drawCards() {
-    let imagePreload1 = ''
-    let imagePreload2 = ''
     reloadDefaultCards()
     document.getElementById("new-cards").disabled = true
     fetch(`${baseUrl}/${deckId}/draw/?count=2`)
         .then(res => res.json())
         .then(data => {
-            console.log('1')
             console.log(data)
-            console.log(calcWinner(data.cards))
             remainingCardsEl.innerHTML = `${data.remaining} Cards Remaining in Deck`
             let i = 0
             for (let card of data.cards) {
                 if (i === 0) {
                     i++
-                    imagePreload1 = preLoadImage(card.image)
-                    imagePreload1.onload = () => document.getElementById('card-1').src = imagePreload1.src
+                    document.getElementById('card-1').src = preLoadImage(card.image).src
 
                 } 
                 else if (i === 1) {
-                    imagePreload2 = preLoadImage(card.image)
-                    imagePreload2.onload = () => document.getElementById('card-2').src = imagePreload2.src
+                    document.getElementById('card-2').src = preLoadImage(card.image).src
                 }
             }
+            document.getElementById('battle-outcome').innerText = calcWinner(data.cards)
         })
         .then(() => {
             document.getElementById("new-cards").disabled = false
