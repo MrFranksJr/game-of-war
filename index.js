@@ -1,4 +1,4 @@
-import { preLoadImage, reloadDefaultCards, calcWinner } from "./data/utils.js"
+import { preLoadImage, reloadDefaultCards, calcWinner, allCardTypes } from "./data/utils.js"
 
 let deckId
 const baseUrl = 'https://deckofcardsapi.com/api/deck'
@@ -14,27 +14,41 @@ function getDeck() {
             reloadDefaultCards()
             deckId = data.deck_id
         })
+    for (let card of allCardTypes) {
+        let result = preLoadImage(`https://deckofcardsapi.com/static/img/${card}.png`)
+        document.getElementById('hidden-placeholder').appendChild(result)
+    }
 }
 
 function drawCards() {
+    let imagePreload1 = ''
+    let imagePreload2 = ''
+    reloadDefaultCards()
+    document.getElementById("new-cards").disabled = true
     fetch(`${baseUrl}/${deckId}/draw/?count=2`)
         .then(res => res.json())
         .then(data => {
+            console.log('1')
             console.log(data)
             console.log(calcWinner(data.cards))
             remainingCardsEl.innerHTML = `${data.remaining} Cards Remaining in Deck`
             let i = 0
-            reloadDefaultCards()
             for (let card of data.cards) {
                 if (i === 0) {
                     i++
-                    preLoadImage(card.image, 'card-1') 
+                    imagePreload1 = preLoadImage(card.image)
+                    imagePreload1.onload = () => document.getElementById('card-1').src = imagePreload1.src
+
                 } 
                 else if (i === 1) {
-                    preLoadImage(card.image, 'card-2')
+                    imagePreload2 = preLoadImage(card.image)
+                    imagePreload2.onload = () => document.getElementById('card-2').src = imagePreload2.src
                 }
             }
-    })
+        })
+        .then(() => {
+            document.getElementById("new-cards").disabled = false
+        })
 }
 
 document.getElementById("new-deck").addEventListener("click", getDeck)

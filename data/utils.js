@@ -1,9 +1,25 @@
-export { preLoadImage, reloadDefaultCards, calcWinner }
+export { preLoadImage, reloadDefaultCards, calcWinner, allCardTypes }
 
-function preLoadImage(imagePath, cardOnTable) {
+const allCardTypes = [
+    'AS', 'AD', 'AC', 'AH',
+    '2S', '2D', '2C', '2H',
+    '3S', '3D', '3C', '3H',
+    '4S', '4D', '4C', '4H',
+    '5S', '5D', '5C', '5H',
+    '6S', '6D', '6C', '6H',
+    '7S', '7D', '7C', '7H',
+    '8S', '8D', '8C', '8H',
+    '9S', '9D', '9C', '9H',
+    '0S', '0D', '0C', '0H',
+    'JS', 'JD', 'JC', 'JH',
+    'QS', 'QD', 'QC', 'QH',
+    'KS', 'KD', 'KC', 'KH',
+]
+
+function preLoadImage(imagePath) {
     const drawnCard = new Image()
     drawnCard.src = imagePath
-    document.getElementById(cardOnTable).src = drawnCard.src
+    return drawnCard
 }
 
 function reloadDefaultCards() {

@@ -78,6 +78,12 @@ h1 {
     border-color: #F0C419;
 }
 
+.new-cards-button:disabled,
+.new-cards-button[disabled],
+.new-cards-button:active:disabled {
+    filter: saturate(0);
+}
+
 .card-images {
     display: flex;
     flex-direction: row;
@@ -106,9 +112,17 @@ h1 {
     width: 100%;
 }
 
+span {
+    text-align: center;
+}
+
 .vs {
     display: inline-block;
     margin-top: 3rem;
     min-width: 50px;
     max-width: 100%;
+}
+
+.hidden-placeholder {
+    display: none;
 }
