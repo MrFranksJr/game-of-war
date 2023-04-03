@@ -83,15 +83,19 @@ function showModalAndBlur() {
 function calcGameWinner() {
     let winnerMessage = document.getElementById('winner-message')
     let scoreField = document.getElementById('score-field')
+    let battleOutcome = document.getElementById('battle-outcome')
     document.getElementById("new-cards").disabled = true
     if (computerScore < playerScore) {
         winnerMessage.textContent = 'You win this game!'
+        battleOutcome.textContent = 'You won this game!'
         scoreField.innerHTML = `Your score: ${playerScore}<br>Computer Score: ${computerScore}`
     } else if (computerScore > playerScore) {
         winnerMessage.textContent = 'Computer wins this game!'
+        battleOutcome.textContent = 'Computer won this game!'
         scoreField.innerHTML = `Your score: ${playerScore}<br>Computer Score: ${computerScore}`
     } else {
         winnerMessage.textContent = `It's a Tie!`
+        battleOutcome.textContent = `It's a Tie!`
         scoreField.innerHTML = `Your score: ${playerScore}<br>Computer Score: ${computerScore}`
     }
     showModalAndBlur()
