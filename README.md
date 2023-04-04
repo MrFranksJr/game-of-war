@@ -53,7 +53,9 @@ I created a better end-game experience as well, with a little modal popping up i
 
 ## Conclusion
 
-So there you have it, I'm slowly but steadily progressing in my journey to becoming a developer. I'm getting really comfortable with setting up my game plan when starting the development of a new assignment. Thinking through complex solutions before even starting the work has always been my strong suit. Getting to use and apply that skill for my own projects is really a lot of fun, and is also what is keeping me engaged and focused to continue the journey. That, and the fact that I'm learning so much along the way. Kudos to Scrimba, it has been an amazing 7 month journey already and I'm so proud to see my Github grow every day!
+So there you have it, I'm slowly but steadily progressing in my journey to becoming a developer. I'm getting really comfortable with setting up my game plan when starting the development of a new assignment. Thinking through complex solutions before even starting the work has always been my strong suit. Getting to use and apply that skill for my own projects is really a lot of fun, and is also what is keeping me engaged and focused to continue the journey. That, and the fact that I'm learning so much along the way. 
+
+Kudos to Scrimba, it has been an amazing and interesting 7 month journey already and I'm so proud to see my Github grow every day! Can't wait to explore React!
 
 <p align="center">
 <img alt="overview" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/game-of-war/game-screen.png">
