@@ -10,7 +10,7 @@
 
 **Live version [here](https://games-of-war.netlify.app/)**
 
-Game of War is a little [card game app](https://www.youtube.com/watch?v=yX-jOVer758) I developed as part of Module 8 of the Front-Developer Career Path over at [scrimba.com](https://scrimba.com). It focuses on using API calls, this time using the [Deck of Cards API](https://deckofcardsapi.com/).
+Game of War is a little [card game app](https://www.youtube.com/watch?v=yX-jOVer758) I developed as part of Module 9 of the Front-Developer Career Path over at [scrimba.com](https://scrimba.com). It focuses on using API calls, this time using the [Deck of Cards API](https://deckofcardsapi.com/).
 
 The entire idea was to get more familiar with aync JavaScript and how to work with Promises, an extensive section about callback functions. To better understand these subjects, we even built our own .filter() clone.
 
